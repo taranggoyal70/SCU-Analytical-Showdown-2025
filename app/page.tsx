@@ -73,14 +73,13 @@ export default async function Home({ searchParams }: PageProps) {
 				<div className="hero-card">
 					<div className="eyebrow">
 						<Sparkles size={16} />
-						Nazava Intelligence OS
+						SCU Analytical Showdown winner
 					</div>
-					<h1 className="title">Every Shopee signal. One source of truth.</h1>
+					<h1 className="title">One marketplace. Every signal. Clear decisions.</h1>
 					<p className="subtitle">
-						Revenue, traffic, campaigns, service quality, and official income
-						statements—from fresh Shopee CSV/XLSX exports stored privately in
-						Vercel Blob. Publish a new seller batch without a rebuild; the server
-						computes every metric on request and keeps shareable filters in the URL.
+						Nazava&apos;s decision workspace joins revenue, traffic, campaigns,
+						service quality, and income statements into one auditable view. Teams
+						can trace every recommendation back to the seller data behind it.
 					</p>
 				</div>
 
@@ -265,7 +264,7 @@ export default async function Home({ searchParams }: PageProps) {
 							<h2>Revenue trend</h2>
 							<p className="muted">Monthly rollup from parsed period dates.</p>
 						</div>
-						<LineChart color="#a78bfa" />
+						<LineChart color="#57e3ad" />
 					</div>
 					<RevenueTrendChart data={summary.revenueTrend} />
 				</div>
@@ -275,7 +274,7 @@ export default async function Home({ searchParams }: PageProps) {
 							<h2>Dataset mix</h2>
 							<p className="muted">Top revenue-contributing datasets.</p>
 						</div>
-						<BarChart3 color="#38bdf8" />
+						<BarChart3 color="#50b8e7" />
 					</div>
 					<ChannelBreakdownChart data={summary.channelBreakdown} />
 				</div>
@@ -288,7 +287,7 @@ export default async function Home({ searchParams }: PageProps) {
 							<h2>Conversion funnel</h2>
 							<p className="muted">Built from visitor, product, cart, and order fields.</p>
 						</div>
-						<PackageSearch color="#22c55e" />
+						<PackageSearch color="#57e3ad" />
 					</div>
 					<FunnelPerformanceChart data={summary.funnel} />
 				</div>
@@ -298,7 +297,7 @@ export default async function Home({ searchParams }: PageProps) {
 							<h2>Campaign revenue</h2>
 							<p className="muted">Campaign-like datasets ranked by tracked revenue.</p>
 						</div>
-						<RefreshCw color="#f59e0b" />
+						<RefreshCw color="#f6c453" />
 					</div>
 					<CampaignRoiChart data={summary.campaigns} />
 				</div>
@@ -311,7 +310,7 @@ export default async function Home({ searchParams }: PageProps) {
 							<h2>Generated insights</h2>
 							<p className="muted">Rules based on current filtered data.</p>
 						</div>
-						<Bot color="#a78bfa" />
+						<Bot color="#9c8cff" />
 					</div>
 					<ul className="insight-list">
 						{summary.insights.map((insight) => (
@@ -341,9 +340,10 @@ export default async function Home({ searchParams }: PageProps) {
 							>
 								JSON API
 							</a>
-							<Database color="#38bdf8" />
+							<Database color="#50b8e7" />
 						</div>
 					</div>
+					<div className="dataset-table-scroll">
 					<table className="dataset-table">
 						<thead>
 							<tr>
@@ -377,6 +377,7 @@ export default async function Home({ searchParams }: PageProps) {
 							))}
 						</tbody>
 					</table>
+					</div>
 				</div>
 			</section>
 		</main>

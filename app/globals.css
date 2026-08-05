@@ -1,17 +1,20 @@
 :root {
 	color-scheme: dark;
-	--background: #020617;
-	--panel: rgba(15, 23, 42, 0.82);
-	--panel-strong: rgba(2, 6, 23, 0.92);
-	--border: rgba(148, 163, 184, 0.18);
-	--muted: #94a3b8;
-	--text: #f8fafc;
-	--accent: #8b5cf6;
-	--cyan: #38bdf8;
+	--background: #0b0f0e;
+	--panel: rgba(17, 24, 22, 0.94);
+	--panel-strong: rgba(10, 15, 14, 0.98);
+	--border: rgba(198, 221, 211, 0.16);
+	--muted: #91a59e;
+	--text: #f4f7ef;
+	--accent: #57e3ad;
+	--cyan: #50b8e7;
+	--coral: #ff7d66;
+	--yellow: #f6c453;
 }
 
 * {
 	box-sizing: border-box;
+	letter-spacing: 0 !important;
 }
 
 html {
@@ -22,10 +25,11 @@ html {
 body {
 	min-height: 100%;
 	margin: 0;
-	background:
-		radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34rem),
-		radial-gradient(circle at top right, rgba(139, 92, 246, 0.28), transparent 36rem),
-		linear-gradient(180deg, #020617 0%, #030712 100%);
+	background-color: var(--background);
+	background-image:
+		linear-gradient(rgba(198, 221, 211, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(198, 221, 211, 0.035) 1px, transparent 1px);
+	background-size: 32px 32px;
 	color: var(--text);
 	font-family:
 		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -53,7 +57,7 @@ select {
 	align-items: center;
 	width: min(1440px, calc(100% - 40px));
 	margin: 0 auto;
-	padding: 18px 0 8px;
+	padding: 14px 0;
 	backdrop-filter: blur(18px);
 }
 
@@ -69,9 +73,10 @@ select {
 	width: 42px;
 	height: 42px;
 	place-items: center;
-	border: 1px solid rgba(139, 92, 246, 0.45);
-	border-radius: 14px;
-	background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(56, 189, 248, 0.9));
+	border: 1px solid rgba(87, 227, 173, 0.48);
+	border-radius: 4px;
+	background: var(--accent);
+	color: #0b0f0e;
 	font-weight: 950;
 }
 
@@ -93,8 +98,8 @@ select {
 	overflow-x: auto;
 	padding: 8px;
 	border: 1px solid var(--border);
-	border-radius: 20px;
-	background: rgba(2, 6, 23, 0.6);
+	border-radius: 6px;
+	background: rgba(11, 15, 14, 0.86);
 	scrollbar-width: none;
 }
 
@@ -105,7 +110,7 @@ select {
 .nav-links a {
 	flex: 0 0 auto;
 	border: 1px solid transparent;
-	border-radius: 999px;
+	border-radius: 4px;
 	padding: 9px 12px;
 	color: #cbd5e1;
 	font-size: 13px;
@@ -115,8 +120,8 @@ select {
 }
 
 .nav-links a:hover {
-	border-color: rgba(139, 92, 246, 0.35);
-	background: rgba(139, 92, 246, 0.14);
+	border-color: rgba(87, 227, 173, 0.35);
+	background: rgba(87, 227, 173, 0.1);
 	color: white;
 }
 
@@ -126,7 +131,7 @@ select {
 	justify-content: center;
 	gap: 7px;
 	border: 1px solid rgba(56, 189, 248, 0.28);
-	border-radius: 14px;
+	border-radius: 4px;
 	background: rgba(56, 189, 248, 0.1);
 	color: #e0f2fe;
 	padding: 12px 14px;
@@ -174,29 +179,23 @@ select {
 	position: relative;
 	overflow: hidden;
 	min-height: 330px;
-	border-radius: 36px;
+	border-radius: 8px;
 	padding: 36px;
 }
 
 .hero-card::before {
-	position: absolute;
-	inset: -140px -80px auto auto;
-	width: 360px;
-	height: 360px;
-	content: "";
-	border-radius: 999px;
-	background: radial-gradient(circle, rgba(139, 92, 246, 0.42), transparent 68%);
+	display: none;
 }
 
 .eyebrow {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	border: 1px solid rgba(139, 92, 246, 0.35);
-	border-radius: 999px;
-	background: rgba(139, 92, 246, 0.14);
+	border: 1px solid rgba(87, 227, 173, 0.32);
+	border-radius: 4px;
+	background: rgba(87, 227, 173, 0.09);
 	padding: 8px 12px;
-	color: #ddd6fe;
+	color: #93f0ca;
 	font-size: 13px;
 	font-weight: 800;
 	letter-spacing: 0.08em;
@@ -207,9 +206,8 @@ select {
 	position: relative;
 	max-width: 780px;
 	margin: 24px 0 14px;
-	font-size: clamp(46px, 7vw, 88px);
-	line-height: 0.91;
-	letter-spacing: -0.07em;
+	font-size: 72px;
+	line-height: 0.94;
 }
 
 .subtitle {
@@ -226,7 +224,7 @@ select {
 }
 
 .panel {
-	border-radius: 28px;
+	border-radius: 8px;
 	padding: 24px;
 }
 
@@ -271,7 +269,7 @@ select {
 .input {
 	width: 100%;
 	border: 1px solid var(--border);
-	border-radius: 16px;
+	border-radius: 4px;
 	background: rgba(2, 6, 23, 0.72);
 	color: var(--text);
 	padding: 13px 14px;
@@ -284,9 +282,9 @@ select {
 	justify-content: center;
 	gap: 8px;
 	border: 0;
-	border-radius: 16px;
-	background: linear-gradient(135deg, var(--accent), var(--cyan));
-	color: white;
+	border-radius: 4px;
+	background: var(--accent);
+	color: #0b0f0e;
 	cursor: pointer;
 	font-weight: 900;
 	padding: 14px 18px;
@@ -312,7 +310,7 @@ select {
 }
 
 .metric-card {
-	border-radius: 24px;
+	border-radius: 8px;
 	padding: 22px;
 }
 
@@ -329,9 +327,9 @@ select {
 
 .metric-value {
 	margin: 16px 0 4px;
-	font-size: clamp(28px, 4vw, 44px);
+	font-size: 38px;
 	font-weight: 950;
-	letter-spacing: -0.05em;
+	letter-spacing: 0;
 }
 
 .metric-note {
@@ -354,18 +352,58 @@ select {
 }
 
 .empty-chart {
-	display: grid;
+	display: flex;
 	min-height: 320px;
-	place-items: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 9px;
 	border: 1px dashed var(--border);
-	border-radius: 22px;
+	border-radius: 6px;
 	color: var(--muted);
 	text-align: center;
+}
+
+.empty-chart-visual {
+	display: flex;
+	height: 82px;
+	align-items: end;
+	gap: 7px;
+	margin-bottom: 8px;
+}
+
+.empty-chart-visual i {
+	display: block;
+	width: 10px;
+	border: 1px solid rgba(87, 227, 173, 0.35);
+	background: rgba(87, 227, 173, 0.1);
+}
+
+.empty-chart-visual i:nth-child(1) { height: 28px; }
+.empty-chart-visual i:nth-child(2) { height: 45px; }
+.empty-chart-visual i:nth-child(3) { height: 34px; }
+.empty-chart-visual i:nth-child(4) { height: 62px; }
+.empty-chart-visual i:nth-child(5) { height: 50px; }
+
+.empty-chart strong {
+	color: #dfe9e3;
+	font-size: 14px;
+}
+
+.empty-chart span {
+	max-width: 330px;
+	font-size: 12px;
+	line-height: 1.55;
 }
 
 .dataset-table {
 	width: 100%;
 	border-collapse: collapse;
+}
+
+.dataset-table-scroll {
+	max-width: 100%;
+	overflow-x: auto;
 }
 
 .dataset-table th,
@@ -406,7 +444,7 @@ select {
 .feature-list li {
 	position: relative;
 	border: 1px solid var(--border);
-	border-radius: 16px;
+	border-radius: 8px;
 	background: rgba(2, 6, 23, 0.42);
 	padding: 14px 14px 14px 38px;
 	color: #dbeafe;
@@ -430,14 +468,14 @@ select {
 	gap: 8px;
 	margin-bottom: 14px;
 	border: 1px solid rgba(245, 158, 11, 0.24);
-	border-radius: 20px;
+	border-radius: 8px;
 	background: rgba(245, 158, 11, 0.08);
 	padding: 18px;
 }
 
 .model-card strong {
 	font-size: clamp(26px, 4vw, 42px);
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 }
 
 .model-card small {
@@ -455,7 +493,7 @@ select {
 	gap: 8px;
 	min-height: 132px;
 	border: 1px solid var(--border);
-	border-radius: 20px;
+	border-radius: 8px;
 	background: rgba(2, 6, 23, 0.46);
 	padding: 18px;
 }
@@ -470,7 +508,7 @@ select {
 
 .detail-card strong {
 	font-size: clamp(22px, 3vw, 34px);
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 }
 
 .detail-card small {
@@ -480,7 +518,7 @@ select {
 
 .insight-list li {
 	border: 1px solid rgba(56, 189, 248, 0.2);
-	border-radius: 18px;
+	border-radius: 8px;
 	background: rgba(56, 189, 248, 0.08);
 	padding: 16px;
 	color: #dbeafe;
@@ -495,7 +533,7 @@ select {
 
 .quality-item {
 	border: 1px solid var(--border);
-	border-radius: 18px;
+	border-radius: 8px;
 	background: rgba(2, 6, 23, 0.46);
 	padding: 16px;
 }
@@ -640,7 +678,7 @@ select {
 	height: 54px;
 	place-items: center;
 	border: 1px solid rgba(139, 92, 246, 0.42);
-	border-radius: 18px;
+	border-radius: 8px;
 	background: rgba(139, 92, 246, 0.14);
 	color: #ddd6fe;
 }
@@ -648,7 +686,7 @@ select {
 .auth-title {
 	margin: 18px 0 8px;
 	font-size: clamp(30px, 5vw, 46px);
-	letter-spacing: -0.05em;
+	letter-spacing: 0;
 }
 
 .auth-form {
@@ -659,7 +697,7 @@ select {
 .form-error,
 .form-success {
 	margin: 0;
-	border-radius: 14px;
+	border-radius: 8px;
 	padding: 12px 14px;
 	font-size: 14px;
 }
@@ -696,14 +734,14 @@ select {
 	display: grid;
 	gap: 5px;
 	border: 1px solid var(--border);
-	border-radius: 18px;
+	border-radius: 8px;
 	background: rgba(2, 6, 23, 0.48);
 	padding: 16px;
 }
 
 .batch-stats strong {
 	font-size: 24px;
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 }
 
 .batch-stats span,
@@ -881,8 +919,13 @@ select {
 
 	.hero-card,
 	.panel {
-		border-radius: 24px;
+		border-radius: 8px;
 		padding: 20px;
+	}
+
+	.title {
+		font-size: 46px;
+		overflow-wrap: anywhere;
 	}
 
 	.quality-grid {
@@ -890,6 +933,7 @@ select {
 	}
 
 	.dataset-table {
+		min-width: 620px;
 		font-size: 13px;
 	}
 
