@@ -23,7 +23,7 @@ import {
 import type { ForecastPoint } from "@/lib/forecast";
 import { formatCompact, formatIdr } from "@/lib/format";
 
-const palette = ["#38bdf8", "#8b5cf6", "#22c55e", "#f59e0b", "#ec4899", "#14b8a6"];
+const palette = ["#57e3ad", "#50b8e7", "#ff7d66", "#f6c453", "#9c8cff", "#78d6ce"];
 
 type TrendPoint = {
 	period: string;
@@ -55,7 +55,11 @@ type CampaignPoint = {
 function EmptyChart() {
 	return (
 		<div className="empty-chart">
-			No chartable data exists for the current filter.
+			<div className="empty-chart-visual" aria-hidden="true">
+				<i /><i /><i /><i /><i />
+			</div>
+			<strong>Waiting for a dated series</strong>
+			<span>These rows remain in the audit. Choose a dataset with period fields to plot the trend.</span>
 		</div>
 	);
 }
@@ -68,8 +72,8 @@ export function RevenueTrendChart({ data }: { data: TrendPoint[] }) {
 			<AreaChart data={data} margin={{ left: 0, right: 16, top: 10, bottom: 0 }}>
 				<defs>
 					<linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-						<stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.55} />
-						<stop offset="100%" stopColor="#8b5cf6" stopOpacity={0.04} />
+						<stop offset="0%" stopColor="#57e3ad" stopOpacity={0.48} />
+						<stop offset="100%" stopColor="#57e3ad" stopOpacity={0.03} />
 					</linearGradient>
 				</defs>
 				<CartesianGrid stroke="#1f2937" vertical={false} />
@@ -93,7 +97,7 @@ export function RevenueTrendChart({ data }: { data: TrendPoint[] }) {
 				<Area
 					type="monotone"
 					dataKey="revenue"
-					stroke="#a78bfa"
+					stroke="#57e3ad"
 					strokeWidth={3}
 					fill="url(#revenueGradient)"
 				/>
@@ -110,8 +114,8 @@ export function ForecastChart({ data }: { data: ForecastPoint[] }) {
 			<ComposedChart data={data} margin={{ left: 0, right: 16, top: 10, bottom: 0 }}>
 				<defs>
 					<linearGradient id="forecastActualGradient" x1="0" y1="0" x2="0" y2="1">
-						<stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.55} />
-						<stop offset="100%" stopColor="#8b5cf6" stopOpacity={0.04} />
+						<stop offset="0%" stopColor="#57e3ad" stopOpacity={0.48} />
+						<stop offset="100%" stopColor="#57e3ad" stopOpacity={0.03} />
 					</linearGradient>
 				</defs>
 				<CartesianGrid stroke="#1f2937" vertical={false} />
@@ -144,7 +148,7 @@ export function ForecastChart({ data }: { data: ForecastPoint[] }) {
 					type="monotone"
 					dataKey="band"
 					stroke="none"
-					fill="#38bdf8"
+					fill="#50b8e7"
 					fillOpacity={0.14}
 					connectNulls
 					isAnimationActive={false}
@@ -152,7 +156,7 @@ export function ForecastChart({ data }: { data: ForecastPoint[] }) {
 				<Area
 					type="monotone"
 					dataKey="actual"
-					stroke="#a78bfa"
+					stroke="#57e3ad"
 					strokeWidth={3}
 					fill="url(#forecastActualGradient)"
 					connectNulls
@@ -160,10 +164,10 @@ export function ForecastChart({ data }: { data: ForecastPoint[] }) {
 				<Line
 					type="monotone"
 					dataKey="forecast"
-					stroke="#38bdf8"
+					stroke="#50b8e7"
 					strokeWidth={3}
 					strokeDasharray="7 6"
-					dot={{ r: 3, fill: "#38bdf8", strokeWidth: 0 }}
+					dot={{ r: 3, fill: "#50b8e7", strokeWidth: 0 }}
 					connectNulls
 				/>
 			</ComposedChart>
