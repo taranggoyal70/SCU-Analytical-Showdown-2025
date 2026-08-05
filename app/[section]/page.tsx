@@ -245,6 +245,7 @@ export default async function SectionPage({
 						<Database color="#38bdf8" />
 					</div>
 				</div>
+				<div className="dataset-table-scroll">
 				<table className="dataset-table">
 					<thead>
 						<tr>
@@ -278,6 +279,7 @@ export default async function SectionPage({
 						))}
 					</tbody>
 				</table>
+				</div>
 			</section>
 		</main>
 	);
