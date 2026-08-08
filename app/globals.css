@@ -917,6 +917,13 @@ select {
 		padding-top: 16px;
 	}
 
+	/* Wrap the section tabs on phones so none are clipped off-screen
+	   (they scrolled, but the hidden scrollbar made them look cut off). */
+	.nav-links {
+		flex-wrap: wrap;
+		overflow-x: visible;
+	}
+
 	.hero-card,
 	.panel {
 		border-radius: 8px;
