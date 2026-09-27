@@ -38,7 +38,7 @@ The Streamlit app had a broad feature surface. The Next.js app now restores that
 /segments               Customer Segments
 /recommendations        Product Recommendations
 /campaign-optimizer     Campaign ROI Optimizer
-/automation             Automation Bot command center
+/automation             Automation readiness and approval planning
 /mass-chat              Mass Chat Broadcasts
 /off-platform           Off-Platform Traffic
 /paylater               Shopee PayLater
@@ -87,6 +87,7 @@ The Next app exposes the server-computed summary as JSON:
 ```bash
 curl "http://localhost:3000/api/summary"
 curl "http://localhost:3000/api/summary?dataset=traffic_overview_cleaned&from=2025-01-01&to=2025-12-31"
+curl "http://localhost:3000/api/health"
 ```
 
 ## Optional FastAPI backend

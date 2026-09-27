@@ -13,10 +13,10 @@
   "dependencies": {
     "@vercel/blob": "^2.6.1",
     "lucide-react": "^0.555.0",
-    "next": "^16.2.10",
+    "next": "^16.3.3",
     "papaparse": "^5.5.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "read-excel-file": "^9.3.1",
     "recharts": "^3.6.0"
   },
@@ -30,6 +30,6 @@
     "write-excel-file": "^4.1.1"
   },
   "overrides": {
-    "postcss": "^8.5.10"
+    "postcss": "^8.5.23"
   }
 }

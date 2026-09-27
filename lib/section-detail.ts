@@ -402,7 +402,7 @@ export async function buildSectionDetail(
 					{ label: "Rows monitored", value: formatInteger(summary.quality.totalRows), note: "Automation input scope" },
 					{ label: "Manual approval", value: "Required", note: "No fake Shopee writes" },
 				],
-				focusTitle: "Automation command center",
+				focusTitle: "Automation readiness center",
 				focusDescription: "This page is intentionally about readiness and suggested actions, not fake execution logs.",
 				focusRows: [
 					{ label: "Suggested campaign action", value: summary.campaigns[0]?.name ?? "Needs data", detail: "Based on highest campaign revenue/ROI signal." },

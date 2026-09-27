@@ -183,8 +183,8 @@ export const dashboardSections: DashboardSection[] = [
 	},
 	{
 		slug: "automation",
-		title: "Automation Bot",
-		kicker: "Action command center",
+		title: "Automation Readiness",
+		kicker: "Human-approved action planning",
 		description:
 			"Automation readiness, API actions, and model signals without pretending to execute Shopee-side actions.",
 		datasetIds: [
@@ -194,7 +194,7 @@ export const dashboardSections: DashboardSection[] = [
 			"voucher_cleaned",
 		],
 		features: [
-			"Suggested actions log",
+			"Suggested action queue",
 			"Available API endpoints",
 			"Model-readiness checks",
 			"Manual approval workflow",
